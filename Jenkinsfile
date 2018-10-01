@@ -5,6 +5,7 @@ pipeline {
     MAJOR_VERSION = 1
   }
 
+  Stages {
   
     stage('build') {
       agent {
@@ -14,4 +15,5 @@ pipeline {
         sh 'ant -f build.xml -v'
       }
   }
+}
 }
