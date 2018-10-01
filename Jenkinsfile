@@ -7,4 +7,9 @@ stages {
       }      
     }
   }
+  post {
+    always {
+     archive 'dist/*.jar'
+  }
+  }
 }
