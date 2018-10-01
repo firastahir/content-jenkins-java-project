@@ -5,8 +5,8 @@ pipeline {
     MAJOR_VERSION = 1
   }
 
-  Stages {
-  
+  stages {
+    
     stage('build') {
       agent {
         label 'apache'
@@ -14,6 +14,12 @@ pipeline {
       steps {
         sh 'ant -f build.xml -v'
       }
+      post {
+        success {
+          archiveArtifacts artifacts: 'dist/*.jar', fingerprint: true
+        }
+    }
+    
+    }
   }
-}
 }
