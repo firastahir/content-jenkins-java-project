@@ -9,7 +9,7 @@ stages {
   }
   post {
     always {
-     archiveArtifacts 'dist/*.jar'
+     archiveArtifacts artifcats: 'dist/*.jar', fingerprint:true
   }
   }
 }
